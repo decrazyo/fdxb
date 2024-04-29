@@ -63,13 +63,13 @@ The push-pull amplifier then drives the LC resonator formed by the antenna L1 an
 The LC resonator will need to be tuned to resonate at the carrier frequency.
 The resonance frequency of an LC resonator can be calculated with the following formula
 ([online calculator](https://www.omnicalculator.com/physics/resonant-frequency-lc)).  
-![Fr = 1 / (2 * pi * sqrt(L * C) )](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}f_r=\frac{1}{{2{\pi}\sqrt{LC}}})
+$Fr = \Large \frac{1}{2 \pi \sqrt{L \times C}}$
 
-For example, if we have a 2.8mH antenna coil that we want to resonate at 134.4kHz then the total capacitance of C1 + C2 + C3 + C4 should be 500.8pF.  
-![134.40kHz = 1 / (2 * pi * sqrt(2.8mH * 500.8pF) )](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}134.40\kHz=\frac{1}{{2{\pi}\sqrt{2.8\mH\times500.8\pF}}})
+For example, if we have a 2.8mH antenna coil that we want to resonate at 134.4kHz then the total capacitance of $C1 + C2 + C3 + C4$ should be 500.8pF.  
+$134.40kHz = \Large \frac{1}{2 \pi \sqrt{2.8mH \times 500.8pF}}$
 
-The closest capacitance that we can easily achieve is 500pF = 220pF + 220pF + 30pF + 30pF, which is close enough.  
-![134.51kHz = 1 / (2 * pi * sqrt(2.8mH * 500pF) )](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}134.51\kHz=\frac{1}{{2{\pi}\sqrt{2.8\mH\times500\pF}}})
+The closest capacitance that we can easily achieve is $500pF = 220pF + 220pF + 30pF + 30pF$, which is close enough.  
+$134.51kHz = \Large \frac{1}{2 \pi \sqrt{2.8mH \times 500pF}}$
 
 Tags will be easier to read with a properly tuned LC resonator.
 Tuning can be judged by measuring the peek-to-peek voltage of the LC resonator.
@@ -86,26 +86,28 @@ If a tag enters the EM field of the antenna coil then the tag will power up and 
 Next we need to extract the transmitted data from the carrier.
 That can be done by passing the signal through series of filters, starting with the envelope detector formed by D1, R2, and C5.
 The optimal frequency for our envelope detector can be calculated from the carrier frequency and the frequency of the data signal with the following formula.  
-![Fo = sqrt(Fc * Fd)](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}f_o=\sqrt{f_c{\times}f_d})
+$Fo = \sqrt{Fc \times Fd}$
 
 The carrier frequency is still 134.4kHz and according to the the 
 [FDX-B protocol](https://www.priority1design.com.au/fdx-b_animal_identification_protocol.html), 
 the frequency of the data signal is a function of the carrier frequency and the data that is being transmitted.
 One bit of data is transferred for every 32 carrier cycles and a bit is identifiable by a state transition at the start and end of a bit.  
-![4.2kHz = 134.4kHz / 32 )](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}4.2\kHz=\frac{134.4\kHz}{32}) i.e. 4200 kb/s
+$4.2kHz = \sqrt{134.4kHz \times 32}$  
+i.e. 4200 kb/s
 
 Additionally, a "0" bit is identified by a state transition in the middle of a bit period.
 That means that our data signal can change as fast as every 16 carrier cycles and results in a maximum data signal frequency of 8.4kHz.  
-![8.4kHz = 134.4kHz / 16 )](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}8.4\kHz=\frac{134.4\kHz}{16}) i.e. 8400 baud
+$8.4kHz = \sqrt{134.4kHz \times 16}$  
+i.e. 8400 baud
 
 Now we can calculate that the optimal envelope detector should operate at 33.6kHz.  
-![33.60kHz = sqrt(134.4kHz * 8.4kHz)](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}33.60\kHz=\sqrt{134.4\kHz{\times}8.4\kHz})
+$33.60kHz = \sqrt{134.4kHz \times 8.4kHz}$
 
 The actual frequency of our envelope detector can be calculated with the following formula for an RC filter.  
-![F = 1 / (2 * pi * R * C)](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}f=\frac{1}{{2{\pi}{\times}R{\times}C}})
+$F = \Large \frac{1}{2 \pi \times R \times C}$
 
 We can get close to the optimal frequency with a 470kΩ resistor and a 10pH capacitor.  
-![33.86kHz = 1 / (2 * pi * 470kΩ * 10pH)](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}33.86\kHz=\frac{1}{{2{\pi}{\times}470k\Omega\times10\pH}})
+$33.86kHz = \Large \frac{1}{2 \pi \times 470k\Omega \times 10pH}$
 
 ![Oscilloscope view of envelope detector](https://github.com/decrazyo/fdxb/blob/main/img/envelope-detector.png)
 
@@ -113,7 +115,7 @@ We can get close to the optimal frequency with a 470kΩ resistor and a 10pH capa
 Next we can use the low pass filter formed by R3 and C6 to cut off frequencies higher than that of our data signal, such as the carrier frequency.
 We can use the formula for an RC filter again to calculate a cutoff point at, or slightly above, the data signal frequency of 8.4kHz.
 A 51kΩ resistor and a 330pH capacitor will work well for this.  
-![9.46kHz = 1 / (2 * pi * 51kΩ * 330pH)](https://render.githubusercontent.com/render/math?math=\bgcolor{white}\color{black}9.46\kHz=\frac{1}{{2{\pi}{\times}51k\Omega\times330\pH}})
+$9.46kHz = \Large \frac{1}{2 \pi \times 51k\Omega \times 330pH}$
 
 ![Oscilloscope view of low pass filter](https://github.com/decrazyo/fdxb/blob/main/img/low-pass-filter.png)
 
