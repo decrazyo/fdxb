@@ -63,7 +63,7 @@ The push-pull amplifier then drives the LC resonator formed by the antenna L1 an
 The LC resonator will need to be tuned to resonate at the carrier frequency.
 The resonance frequency of an LC resonator can be calculated with the following formula
 ([online calculator](https://www.omnicalculator.com/physics/resonant-frequency-lc)).  
-$Fr = \Large \frac{1}{2 \pi \sqrt{L \times C}}$
+$F = \Large \frac{1}{2 \pi \sqrt{L \times C}}$
 
 For example, if we have a 2.8mH antenna coil that we want to resonate at 134.4kHz then the total capacitance of $C1 + C2 + C3 + C4$ should be 500.8pF.  
 $134.40kHz = \Large \frac{1}{2 \pi \sqrt{2.8mH \times 500.8pF}}$
@@ -86,18 +86,18 @@ If a tag enters the EM field of the antenna coil then the tag will power up and 
 Next we need to extract the transmitted data from the carrier.
 That can be done by passing the signal through series of filters, starting with the envelope detector formed by D1, R2, and C5.
 The optimal frequency for our envelope detector can be calculated from the carrier frequency and the frequency of the data signal with the following formula.  
-$Fo = \sqrt{Fc \times Fd}$
+$F_{o} = \sqrt{F_{c} \times F_{d}}$
 
 The carrier frequency is still 134.4kHz and according to the the 
 [FDX-B protocol](https://www.priority1design.com.au/fdx-b_animal_identification_protocol.html), 
 the frequency of the data signal is a function of the carrier frequency and the data that is being transmitted.
 One bit of data is transferred for every 32 carrier cycles and a bit is identifiable by a state transition at the start and end of a bit.  
-$4.2kHz = \sqrt{134.4kHz \times 32}$  
+$4.2kHz = \Large \frac{134.4kHz}{32}$  
 i.e. 4200 kb/s
 
 Additionally, a "0" bit is identified by a state transition in the middle of a bit period.
 That means that our data signal can change as fast as every 16 carrier cycles and results in a maximum data signal frequency of 8.4kHz.  
-$8.4kHz = \sqrt{134.4kHz \times 16}$  
+$8.4kHz = \Large \frac{134.4kHz}{16}$  
 i.e. 8400 baud
 
 Now we can calculate that the optimal envelope detector should operate at 33.6kHz.  
