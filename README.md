@@ -108,12 +108,12 @@ There are many valid values for $\tau$.
 In our case, we'll use a value that is a 10<sub>th</sub> of the data signal's period.  
 $\tau = 0.1 \times \Large \frac{1}{8.4kHz} \normalsize = 11.9 \mu s$
 
-Using a 100kΩ resistor and a 100pF capacitor gives us a value that is resonably close to our chosen $\tau$.  
+Using a 100kΩ resistor and a 100pF capacitor gives us a value that is reasonably close to our chosen $\tau$.  
 $10\mu s = 100k\Omega \times 100pF$
 
 ![Oscilloscope view of envelope detector](https://github.com/decrazyo/fdxb/blob/main/img/envelope-detector.png)
 
-There is still a lot of high frequency noise from the carrior present in the signal after the envlope detector.
+There is still a lot of high frequency noise from the carrier present in the signal after the envelope detector.
 To take care of that we can use the low pass filter formed by R3 and C6 to cut off frequencies higher than that of our data signal.
 We can use the formula for an RC filter to calculate a cutoff point at, or slightly above, the data signal frequency of 8.4kHz.  
 $f = \Large \frac{1}{2 \pi \times R \times C}$
