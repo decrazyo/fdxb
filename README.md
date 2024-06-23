@@ -33,7 +33,7 @@ The [EM4100 protocol](https://www.priority1design.com.au/em4100_protocol.html), 
 | quantity | capacitance   | location(s)    |
 |----------|---------------|----------------|
 | 4        | depends on L1 | C1, C2, C3, C4 |
-| 1        | 10pF          | C5             |
+| 1        | 100pF         | C5             |
 | 1        | 330pF         | C6             |
 | 1        | 4.7nF         | C7             |
 
@@ -42,11 +42,12 @@ The [EM4100 protocol](https://www.priority1design.com.au/em4100_protocol.html), 
 | quantity | resistance | location(s) |
 |----------|------------|-------------|
 | 1        | 1kΩ        | R1          |
-| 2        | 470kΩ      | R2, R7      |
+| 1        | 100kΩ      | R2          |
 | 1        | 51kΩ       | R3          |
 | 1        | 22kΩ       | R4          |
 | 1        | 220kΩ      | R5          |
 | 1        | 4.7kΩ      | R6          |
+| 1        | 470kΩ      | R7          |
 | 1        | 10kΩ       | R8          |
 | 1        | 6.8kΩ      | R9          |
 
