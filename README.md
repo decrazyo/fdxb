@@ -142,6 +142,7 @@ That gives us a digital signal which is suitable for parsing by an Arduino.
 
 
 ## See Also
+[How My DIY RFID Reader Became a Lifesaver - SecretCon 2024](https://www.youtube.com/watch?v=yirEXUiZuOM)  
 [125 kHz RFID tag reader](https://www.serasidis.gr/circuits/RFID_reader/125kHz_RFID_reader.htm)  
 [EM4100 RFID Reader Mod](https://github.com/s60sc/ESP32_RFID_Reader)  
 [Coil Inductance Calculator](https://www.66pacific.com/calculators/coil-inductance-calculator.aspx)
