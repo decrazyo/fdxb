@@ -118,8 +118,8 @@ To take care of that we can use the low pass filter formed by R3 and C6 to cut o
 We can use the formula for an RC filter to calculate a cutoff point at, or slightly above, the data signal frequency of 8.4kHz.  
 $f = \Large \frac{1}{2 \pi \times R \times C}$
 
-A 51kΩ resistor and a 330pH capacitor will work well for this.  
-$9.46kHz = \Large \frac{1}{2 \pi \times 51k\Omega \times 330pH}$
+A 51kΩ resistor and a 330pF capacitor will work well for this.  
+$9.46kHz = \Large \frac{1}{2 \pi \times 51k\Omega \times 330pF}$
 
 ![Oscilloscope view of low pass filter](https://github.com/decrazyo/fdxb/blob/main/img/low-pass-filter.png)
 
