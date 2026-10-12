@@ -8,6 +8,7 @@ Only tags that use the [FDX-B protocol](https://www.priority1design.com.au/fdx-b
 Support for [HDX protocol](https://www.priority1design.com.au/hdx_animal_identification_protocol.html) based tags would require a significant hardware redesign that I'm unwilling to do at the moment.
 The [EM4100 protocol](https://www.priority1design.com.au/em4100_protocol.html), that is commonly used by RFID fobs/cards, could be supported with minor changes but that's outside the scope of this project.
 
+[Watch the video!](https://www.youtube.com/watch?v=yirEXUiZuOM)
 
 ## Hardware
 ![Schematic](https://github.com/decrazyo/fdxb/blob/main/img/schematic.svg)
